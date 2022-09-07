@@ -1,0 +1,10 @@
+server {
+    listen 80;
+    server_name grafana.home.arpa;
+
+    include /etc/nginx/default.d/*.conf;
+
+    location / {
+        proxy_pass http://grafana.home.arpa:3000/;
+    }   
+} 

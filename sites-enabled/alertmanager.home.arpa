@@ -1,0 +1,10 @@
+server {
+    listen 80;
+    server_name alertmanager.home.arpa;
+
+    include /etc/nginx/default.d/*.conf;
+
+    location / {
+        proxy_pass http://alertmanager.home.arpa:9093/;
+    }   
+} 
